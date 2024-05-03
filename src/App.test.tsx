@@ -7,12 +7,6 @@ import mockCharacters2 from "./testing/mock/characters-2";
 import { describe, expect, test } from "vitest";
 
 describe("<App />", () => {
-  test("it should work", () => {
-    expect(true).toBe(true);
-  });
-});
-
-describe("<App />", () => {
   describe("loading character", () => {
     test('renders the title "Characters"', async () => {});
     test("renders a list of 10 characters", async () => {});
