@@ -2,8 +2,6 @@ import { render, fireEvent, screen } from "@testing-library/react";
 import React from "react";
 import App from "./App";
 
-import mockCharacters from "./testing/mock/characters";
-import mockCharacters2 from "./testing/mock/characters-2";
 import { describe, expect, test } from "vitest";
 
 describe("<App />", () => {

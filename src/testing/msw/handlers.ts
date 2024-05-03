@@ -1,3 +1,3 @@
-import { http, HttpResponse } from "msw";
-
-export const handlers = [];
+export const handlers = [
+  // implements your handlers
+];
