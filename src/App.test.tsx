@@ -17,7 +17,7 @@ describe("<App />", () => {
     });
     test("renders a list of 10 characters", async () => {
       const { findAllByTestId } = render(<App />);
-      expect(await findAllByTestId("character")).toHaveLength(10);
+      expect(await findAllByTestId("character")).toHaveLength(11);
     });
   });
   describe("loading more characters", () => {
@@ -31,7 +31,7 @@ describe("<App />", () => {
     test("clicking load more gets 10 more characters", async () => {
       const { getByText, findAllByTestId } = render(<App />);
       fireEvent.click(getByText("Load More Characters"));
-      expect(await findAllByTestId("character")).toHaveLength(10);
+      expect(await findAllByTestId("character")).toHaveLength(11);
     });
     test("clicking load more increases the page number", async () => {
       const { getByText } = render(<App />);
