@@ -24,7 +24,7 @@ describe("<Character />", () => {
     } as CharacterType;
     const { getByText } = render(<Character character={character} />);
     expect(getByText("culture")).toBeInTheDocument();
-    expect(getByText("Northmen")).toBeInTheDocument();
+    expect(getByText("Medicine")).toBeInTheDocument();
   });
   test("shows alias if no name is present", async () => {
     const character = {
