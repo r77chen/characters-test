@@ -9,18 +9,18 @@ describe("<Character />", () => {
   });
   test('shows fields for "name" and "culture"', async () => {
     const character = {
-      name: "Jon",
-      culture: "Northmen",
-      books: ["https://www.anapioficeandfire.com/api/books/5"],
+      name: "Mark",
+      culture: "Medicine",
+      books: ["https://www.anapioficeandfire.com/api/books/10"],
     } as CharacterType;
     const { getByText } = render(<Character character={character} />);
     expect(getByText("name")).toBeInTheDocument();
   });
   test("shows culture if it is present", async () => {
     const character = {
-      name: "Jon",
-      culture: "Northmen",
-      books: ["https://www.anapioficeandfire.com/api/books/5"],
+      name: "Mark",
+      culture: "Medicine",
+      books: ["https://www.anapioficeandfire.com/api/books/10"],
     } as CharacterType;
     const { getByText } = render(<Character character={character} />);
     expect(getByText("culture")).toBeInTheDocument();
@@ -28,25 +28,26 @@ describe("<Character />", () => {
   });
   test("shows alias if no name is present", async () => {
     const character = {
-      aliases: ["Jon Snow"],
-      culture: "Northmen",
-      books: ["https://www.anapioficeandfire.com/api/books/5"],
+      aliases: ["Mark Kelly"],
+      culture: "Medicine",
+      books: ["https://www.anapioficeandfire.com/api/books/10"],
     } as CharacterType;
     const { getByText } = render(<Character character={character} />);
     expect(getByText("name")).toBeInTheDocument();
-    expect(getByText("Jon Snow")).toBeInTheDocument();
+    expect(getByText("Mark Kelly")).toBeInTheDocument();
   });
   test("shows how many books this characters made an appearance in", async () => {
     const character = {
-      name: "Jon",
-      culture: "Northmen",
+      name: "Mark",
+      culture: "Medicine",
       books: [
-        "https://www.anapioficeandfire.com/api/books/5",
-        "https://www.anapioficeandfire.com/api/books/8",
+        "https://www.anapioficeandfire.com/api/books/2",
+        "https://www.anapioficeandfire.com/api/books/10",
+        "https://www.anapioficeandfire.com/api/books/15",
       ],
     } as CharacterType;
     const { getByText } = render(<Character character={character} />);
     expect(getByText("Number of Books:")).toBeInTheDocument();
-    expect(getByText("2")).toBeInTheDocument();
+    expect(getByText("3")).toBeInTheDocument();
   });
 });
